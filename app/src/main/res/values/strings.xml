@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Prayer Times</string>
+    <string name="shubuh_name">Shubuh</string>
+    <string name="dhuhur_name">Dhuhur</string>
+    <string name="ashar_name">Ashar</string>
+    <string name="maghrib_name">Maghrib</string>
+    <string name="isya_name">Isya</string>
+</resources>

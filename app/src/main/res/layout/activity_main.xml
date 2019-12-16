@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        tools:context=".ui.MainActivity">
+
+        <!-- Table -->
+        <LinearLayout
+            android:id="@+id/table"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="120dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Shubuh -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/shubuh_row"
+                style="@style/row">
+
+                <TextView
+                    android:id="@+id/shubuh_name"
+                    style="@style/name"
+                    android:layout_marginStart="@dimen/horizontal_to_row"
+                    android:layout_marginTop="@dimen/vertical_to_row"
+                    android:text="@string/shubuh_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/shubuh_time"
+                    style="@style/name"
+                    android:layout_marginTop="@dimen/vertical_to_row"
+                    android:layout_marginEnd="@dimen/horizontal_to_row"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Time" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Dhuhur -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dhuhur_row"
+                style="@style/row">
+
+                <TextView
+                    android:id="@+id/dhuhur_name"
+                    style="@style/name"
+                    android:layout_marginStart="@dimen/horizontal_to_row"
+                    android:layout_marginTop="@dimen/vertical_to_row"
+                    android:text="@string/dhuhur_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/dhuhur_time"
+                    style="@style/name"
+                    android:layout_marginTop="@dimen/vertical_to_row"
+                    android:layout_marginEnd="@dimen/horizontal_to_row"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Time" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Ashar -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ashar_row"
+                style="@style/row">
+
+                <TextView
+                    android:id="@+id/ashar_name"
+                    style="@style/name"
+                    android:layout_marginStart="@dimen/horizontal_to_row"
+                    android:layout_marginTop="@dimen/vertical_to_row"
+                    android:text="@string/ashar_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/ashar_time"
+                    style="@style/name"
+                    android:layout_marginTop="@dimen/vertical_to_row"
+                    android:layout_marginEnd="@dimen/horizontal_to_row"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Time" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Maghrib -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/maghrib_row"
+                style="@style/row">
+
+                <TextView
+                    android:id="@+id/maghrib_name"
+                    style="@style/name"
+                    android:layout_marginStart="@dimen/horizontal_to_row"
+                    android:layout_marginTop="@dimen/vertical_to_row"
+                    android:text="@string/maghrib_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/maghrib_time"
+                    style="@style/name"
+                    android:layout_marginTop="@dimen/vertical_to_row"
+                    android:layout_marginEnd="@dimen/horizontal_to_row"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Time" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Isya -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/isya_row"
+                style="@style/row">
+
+                <TextView
+                    android:id="@+id/isya_name"
+                    style="@style/name"
+                    android:layout_marginStart="@dimen/horizontal_to_row"
+                    android:layout_marginTop="@dimen/vertical_to_row"
+                    android:text="@string/isya_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/isya_time"
+                    style="@style/name"
+                    android:layout_marginTop="@dimen/vertical_to_row"
+                    android:layout_marginEnd="@dimen/horizontal_to_row"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Time" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
