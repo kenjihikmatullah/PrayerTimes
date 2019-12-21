@@ -6,6 +6,7 @@ import dev.kenji.prayertimes.network.Api
 import dev.kenji.prayertimes.network.asDatabaseModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.io.IOException
 
 class PrayerTimesRepository (private val database: PrayerTimesDatabase) {
 
@@ -16,18 +17,26 @@ class PrayerTimesRepository (private val database: PrayerTimesDatabase) {
     val prayerTimes = database.prayerTimesDao.get()
 
     suspend fun updatePrayerTimes() {
-        withContext(Dispatchers.IO) {
+        try {
             /**
              * Get timings from network
              */
             Log.i("PrayerTimesRepository", "Ready to fetch data from network")
-            val timings = Api.apiServices.getCalendarByCity(city, country, method).await().data.timings
-            Log.i("PrayerTimesRepository", "Data fetched from network")
 
-            /**
-             * Insert it to database
-             */
-            database.prayerTimesDao.insert(timings.asDatabaseModel())
+            withContext(Dispatchers.IO) {
+                val timings = Api.apiServices.getCalendarByCity(city, country, method).data.timings
+                Log.i("PrayerTimesRepository", "Data fetched from network")
+
+                /**
+                 * Insert it to database
+                 */
+                database.prayerTimesDao.insert(timings.asDatabaseModel())
+            }
+
+        } catch (e: IOException) {
+            Log.i("PrayerTimesRepository", e.message ?: "Error while fetch data from network")
         }
+
+
     }
 }

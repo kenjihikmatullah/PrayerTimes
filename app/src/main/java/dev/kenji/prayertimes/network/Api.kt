@@ -3,7 +3,6 @@ package dev.kenji.prayertimes.network
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import kotlinx.coroutines.Deferred
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
@@ -34,15 +33,16 @@ val retrofit: Retrofit = Retrofit.Builder()
  * API services
  */
 interface ApiServices {
-    @GET("timingsByCity")
-    fun getCalendarByCity(
+
+    @GET("timingsByCity/:date_or_timestamp")
+    suspend fun getCalendarByCity(
         @Query("city") city: String,
         @Query("country") country: String,
-        @Query("method") method: Int): Deferred<Response>
+        @Query("method") method: Int): Response
 }
 
 /**
- * API
+ * API for whole app
  */
 object Api {
     val apiServices: ApiServices by lazy {

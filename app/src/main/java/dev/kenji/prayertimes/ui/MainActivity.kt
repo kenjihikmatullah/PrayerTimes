@@ -1,8 +1,9 @@
 package dev.kenji.prayertimes.ui
 
+import android.app.Application
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil.setContentView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import dev.kenji.prayertimes.R
@@ -19,13 +20,12 @@ class MainActivity : AppCompatActivity() {
         /**
          * Binding
          */
-        val binding: ActivityMainBinding = DataBindingUtil
-            .setContentView(this, R.layout.activity_main)
+        val binding: ActivityMainBinding = setContentView(this, R.layout.activity_main)
 
         /**
          * Get application
          */
-        val application = requireNotNull(this).application
+        val application: Application = requireNotNull(this).application
 
         /**
          * Create view model
